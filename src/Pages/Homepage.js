@@ -1,9 +1,12 @@
-import React from "react"
+import React from "react";
+import { Link } from 'react-router-dom';
 
 export default function Homepage() {
     return (
         <div>
-            <h2>Homepage</h2>
+            <Link to="/login">Login form</Link>
+            <br></br>
+            <Link to="/register">Register form</Link>
         </div>
     )
 }
