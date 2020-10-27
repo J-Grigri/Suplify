@@ -1,29 +1,69 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import '../Styles/regLog.css';
+import styled from 'styled-components'
+
+
+const Wrapper = styled.div`
+    display:flex;
+    justify-content: center;
+    `
+const EntryForm = styled.form`
+background-color: lightgrey;
+border-radius:5px;
+display:flex;
+flex-direction: column;
+padding:1rem;
+margin:2rem;
+min-width:40%;
+`
+const Label = styled.label`
+margin-bottom:0.1rem;
+font-weight: 400;
+`
+const Input = styled.input`
+margin-bottom:1rem;
+font-weight: 300;
+`
+const SubmitFormBtn = styled.input`
+Background-color:green;
+margin-top:1rem;
+color:white;
+font-weight:500;
+font-size:large;
+`
+
+const Title3 = styled.h3`
+font-size:x-large;
+text-align:center;
+`
+const Title5 = styled.h5`
+font-size:medium;
+text-align:center;
+`
+
 
 export default function Register() {
     return (
-        <div className=" regLogForm">
-            <form className="col-lg-5 regLogContents">
-                <h3>Register new user</h3>
-                <h6>Already registered? <Link to="/login">Login</Link></h6>
+        <Wrapper>
+            <EntryForm>
+                <Title3>Register new user</Title3>
+                <Title5>Already registered? <Link to="/login">Login</Link></Title5>
 
-                <label for="firstName">First name</label>
-                <input type="text" id="firstName" name="firstName" />
+                <Label for="firstName">First name</Label>
+                <Input type="text" id="firstName" name="firstName" />
 
-                <label for="lastName">Last name</label>
-                <input type="text" id="lastName" name="lastName" />
+                <Label for="lastName">Last name</Label>
+                <Input type="text" id="lastName" name="lastName" />
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" />
+                <Label for="email">Email</Label>
+                <Input type="email" id="email" name="email" />
 
-                <label for="password">Create password</label>
-                <input type="password" id="password" name="password" />
-                <span >Password must be at least 8 characters</span>
+                <Label for="password">Create password</Label>
+                <Input type="password" id="password" name="password" placeholder="Password must be at least 8 characters" />
 
-                <input type="submit" value="Register" className="btn-success" />
-            </form>
-        </div>
+
+                <SubmitFormBtn type="submit" value="Register" />
+            </EntryForm>
+        </Wrapper>
     )
 }
