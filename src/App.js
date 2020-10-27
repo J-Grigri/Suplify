@@ -1,5 +1,4 @@
-import Routes from "./Routes/Route.js"
-import "bootstrap/dist/css/bootstrap.min.css";
+import Routes from "./Pages/index"
 import './App.css';
 
 function App() {

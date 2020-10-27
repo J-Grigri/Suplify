@@ -1,8 +1,8 @@
 import React from 'react'
 import { Switch, Route } from "react-router-dom"
-import Login from "../Pages/Login"
-import Homepage from "../Pages/Homepage"
-import Register from "../Pages/Register"
+import Login from "./Login"
+import Homepage from "./Homepage"
+import Register from "./Register"
 
 export default function routes() {
     return (
@@ -13,6 +13,3 @@ export default function routes() {
         </Switch>
     )
 }
-
-
-
