@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
-import { Input, SubmitFormBtn } from '../Components/input'
+import { Input, Label } from '../styledComponents/input'
+import { SubmitFormBtn } from '../styledComponents/buttons'
 import { Title3, Title5 } from '../Components/heading'
-import Label from '../Components/label'
 import EntryForm from '../Components/entryForm'
 
 const Wrapper = styled.div`

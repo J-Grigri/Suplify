@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
-import { Input, SubmitFormBtn } from '../Components/input'
-import { Title3, Title5 } from '../Components/heading'
-import Label from '../Components/label'
-import EntryForm from '../Components/entryForm'
+import { Input, Label } from '../styledComponents/input'
+import { SubmitFormBtn } from '../styledComponents/buttons'
+import { Title3, Title5 } from '../styledComponents/heading'
+import EntryForm from '../styledComponents/entryForm'
 
 const Wrapper = styled.div`
     display:flex;
