@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import { Input, Label } from '../styledComponents/input'
 import { SubmitFormBtn } from '../styledComponents/buttons'
-import { Title3, Title5 } from '../Components/heading'
-import EntryForm from '../Components/entryForm'
+import { Title3, Title5 } from '../styledComponents/heading'
+import EntryForm from '../styledComponents/entryForm'
 
 const Wrapper = styled.div`
     display:flex;

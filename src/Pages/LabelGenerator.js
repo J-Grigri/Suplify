@@ -63,7 +63,6 @@ export default function LabelGenerator() {
         setFormInput({
             ...formInput, [e.target.name]: e.target.value
         })
-        console.log(formInput)
     }
 
 
@@ -137,50 +136,50 @@ export default function LabelGenerator() {
                 <Breakline />
                 <Row>
                     <Detail>
-                        <Label for="calories">Total Fat (g):</Label>
-                        <Input type="calories" id="calories" name="calories"></Input>
+                        <Label for="totalFat">Total Fat (g):</Label>
+                        <Input type="totalFat" id="totalFat" name="totalFat"></Input>
                     </Detail>
                     <Detail>
-                        <Label for="calories">Saturated Fat (g):</Label>
-                        <Input type="calories" id="calories" name="calories"></Input>
+                        <Label for="saturatedFat">Saturated Fat (g):</Label>
+                        <Input type="saturatedFat" id="saturatedFat" name="saturatedFat"></Input>
                     </Detail>
                     <Detail>
-                        <Label for="calories">Trans Fat (g):</Label>
-                        <Input type="calories" id="calories" name="calories"></Input>
-                    </Detail>
-                </Row>
-                <Row>
-                    <Detail>
-                        <Label for="calories">Cholesterol (mg):</Label>
-                        <Input type="calories" id="calories" name="calories"></Input>
-                    </Detail>
-
-                    <Detail>
-                        <Label for="calories">Sodium (mg):</Label>
-                        <Input type="calories" id="calories" name="calories"></Input>
-                    </Detail>
-
-                    <Detail>
-                        <Label for="calories">Total Carbohydrates (g):</Label>
-                        <Input type="calories" id="calories" name="calories"></Input>
+                        <Label for="transFat">Trans Fat (g):</Label>
+                        <Input type="transFat" id="transFat" name="transFat"></Input>
                     </Detail>
                 </Row>
                 <Row>
                     <Detail>
-                        <Label for="calories">Dietary Fiber (g):</Label>
-                        <Input type="calories" id="calories" name="calories"></Input>
+                        <Label for="cholesterol">Cholesterol (mg):</Label>
+                        <Input type="number" id="cholesterol" name="cholesterol"></Input>
+                    </Detail>
+
+                    <Detail>
+                        <Label for="sodium">Sodium (mg):</Label>
+                        <Input type="number" id="sodium" name="sodium"></Input>
+                    </Detail>
+
+                    <Detail>
+                        <Label for="carbohydrates">Total Carbohydrates (g):</Label>
+                        <Input type="number" id="carbohydrates" name="carbohydrates"></Input>
+                    </Detail>
+                </Row>
+                <Row>
+                    <Detail>
+                        <Label for="fiber">Dietary Fiber (g):</Label>
+                        <Input type="number" id="fiber" name="fiber"></Input>
                     </Detail>
                     <Detail>
-                        <Label for="calories">Sugars (g):</Label>
-                        <Input type="calories" id="calories" name="calories"></Input>
+                        <Label for="sugars">Sugars (g):</Label>
+                        <Input type="number" id="sugars" name="sugars"></Input>
                     </Detail>
                     <Detail>
-                        <Label for="calories">Added Sugar (g):</Label>
-                        <Input type="calories" id="calories" name="calories"></Input>
+                        <Label for="addedSugar">Added Sugar (g):</Label>
+                        <Input type="number" id="addedSugar" name="addedSugar"></Input>
                     </Detail>
                     <Detail>
-                        <Label for="calories">Protein (g): </Label>
-                        <Input type="calories" id="calories" name="calories"></Input>
+                        <Label for="protein">Protein (g): </Label>
+                        <Input type="number" id="protein" name="protein"></Input>
                     </Detail>
                 </Row>
                 <Breakline />
