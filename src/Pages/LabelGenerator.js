@@ -65,17 +65,39 @@ export default function LabelGenerator() {
     }
 
     //capture user input
-    function handleSubmit(e) {
+    async function generateLabel(e) {
         e.preventDefault()
+
+        const res = await fetch(process.env.REACT_APP_SERVER, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formInput)
+        })
+
+        console.log("status", res.status)
+        if (res.status === 201) {
+        }
+        else {
+            return alert("Could not generate label")
+        }
+        console.log(formInput)
+
         // const [formType, servings, rounding, quantity, units, size, servingUnit, calories, totalFat, saturatedFat, transFat, cholesterol, sodium, carbohydrates, fiber, sugars, addedSugar, protein] = formInput
 
-        //fetch here
     }
 
+    function resetForm() {
+        setFormInput({})
+        document.getElementById("ingredients").reset()
+    }
 
+    console.log(formInput)
     return (
         <LabelGeneratorForm
-            onSubmit={handleSubmit}
+            id="ingredients"
+            onSubmit={generateLabel}
             onChange={handleChange}
         >
             <FormType>
@@ -187,7 +209,7 @@ export default function LabelGenerator() {
                 <Breakline />
             </Ingredients>
             <Center>
-                <ClearFormBtn type="reset" value="Clear Form"></ClearFormBtn>
+                <ClearFormBtn type="reset" value="Clear Form" onClick={() => resetForm()}></ClearFormBtn>
                 <SubmitFormBtn type="submit" value="Generate"></SubmitFormBtn>
             </Center>
         </LabelGeneratorForm>
