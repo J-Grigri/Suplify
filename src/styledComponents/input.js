@@ -18,6 +18,10 @@ font-weight:450;
 margin: 0.2rem 0;
 inline-block;
 `
+export const LabelDetail = styled(Label)`
+font-size:smaller;
+font-weight:400;
+`
 
 export const Select = styled.select`
 font-size:medium;

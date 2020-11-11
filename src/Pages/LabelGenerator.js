@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import styled from 'styled-components'
-import { Input, Label, Select, } from '../styledComponents/input'
+import { Input, Label, LabelDetail } from '../styledComponents/input'
 import { SubmitFormBtn, ClearFormBtn } from '../styledComponents/buttons'
 import { Title3 } from '../styledComponents/heading'
 
@@ -48,10 +48,9 @@ const Center = styled.div`
 text-align:center;
 `
 
-function handleSubmit(e) {
-    e.preventDefault()
-    //fetch here
-}
+
+
+
 
 
 export default function LabelGenerator() {
@@ -65,6 +64,14 @@ export default function LabelGenerator() {
         })
     }
 
+    //capture user input
+    function handleSubmit(e) {
+        e.preventDefault()
+        // const [formType, servings, rounding, quantity, units, size, servingUnit, calories, totalFat, saturatedFat, transFat, cholesterol, sodium, carbohydrates, fiber, sugars, addedSugar, protein] = formInput
+
+        //fetch here
+    }
+
 
     return (
         <LabelGeneratorForm
@@ -74,7 +81,7 @@ export default function LabelGenerator() {
             <FormType>
                 <Title3>Step 1: Choose a Nutrition Label Form</Title3>
                 <Option>
-                    <Input type="radio" id="basic" name="formType" value="basic" defaultChecked />
+                    <Input type="radio" id="basic" name="formType" value="basic" default />
                     <Label for="basic">The most basic nutrition label. Vertical layout.</Label>
                 </Option>
                 <Option>
@@ -96,11 +103,8 @@ export default function LabelGenerator() {
                     </Detail>
                     <Detail>
                         <Label for="rounding">Rounding:</Label>
-                        <Select name="rounding" id="rounding">
-                            <option value="default">Default</option>
-                            <option value="usually">Usually</option>
-                            <option value="varied">Varied</option>
-                        </Select>
+                        <Input type="text" id="rounding" name="rounding"></Input>
+                        <LabelDetail for="rounding">E.g. Varied, Usually, Default.</LabelDetail>
                     </Detail>
                 </Row>
                 <Row>
@@ -120,10 +124,8 @@ export default function LabelGenerator() {
                     </Detail>
                     <Detail>
                         <Label for="servingUnit">Serving size units:</Label>
-                        <Select name="servingUnit" id="servingUnit">
-                            <option value="grams">Grams(g)</option>
-                            <option value="millimeters">Milliliters (mL)</option>
-                        </Select>
+                        <Input type="servingUnit" id="servingUnit" name="servingUnit"></Input>
+                        <LabelDetail for="servingUnit">E.g. Grams(g), Milliliters(ml), Softgels, Gummies, Tablets, Capsules.</LabelDetail>
                     </Detail>
                 </Row>
                 <Breakline />
