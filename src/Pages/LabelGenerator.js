@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import styled from 'styled-components'
-import { Input, Label, LabelDetail } from '../styledComponents/input'
+import { Input, Label, LabelDetail, Select, Detail, InputBox } from '../styledComponents/input'
 import { SubmitFormBtn, ClearFormBtn } from '../styledComponents/buttons'
 import { Title3 } from '../styledComponents/heading'
 
@@ -13,7 +13,7 @@ const FormType = styled.div`
 padding:1rem;
 `
 
-const Option = styled.div`
+const Option = styled.option`
 border:1px solid black;
 border-radius:5px;
 padding:1rem;
@@ -31,13 +31,6 @@ const Ingredients = styled.div`
 padding:1rem;
 `
 
-const Detail = styled.div`
-display:flex;
-flex-direction:column;
-margin-right:2rem;
-margin-bottom:1rem;
-flex-wrap: wrap;
-`
 
 const Row = styled.div`
 display: flex;
@@ -47,11 +40,6 @@ flex-wrap: wrap;
 const Center = styled.div`
 text-align:center;
 `
-
-
-
-
-
 
 export default function LabelGenerator() {
 
@@ -103,16 +91,12 @@ export default function LabelGenerator() {
             <FormType>
                 <Title3>Step 1: Choose a Nutrition Label Form</Title3>
                 <Option>
-                    <Input type="radio" id="basic" name="formType" value="basic" default />
-                    <Label for="basic">The most basic nutrition label. Vertical layout.</Label>
+                    <Input type="radio" id="vertical" name="formType" value="vertical" default />
+                    <Label for="vertical">Standard nutrition label with extra fields for misc. vitamins. Vertical Layout</Label>
                 </Option>
                 <Option>
-                    <Input type="radio" id="standard" name="formType" value="standard" />
-                    <Label for="standard">Standard nutrition label with extra fields for misc. vitamins. Vertical layout.</Label>
-                </Option>
-                <Option>
-                    <Input type="radio" id="tabbed" name="formType" value="tabbed" />
-                    <Label for="tabbed">Tabbed nutrition label for bottles and round containers. Horizontal layout.</Label>
+                    <Input type="radio" id="horizontal" name="formType" value="horizontal" />
+                    <Label for="horizontal">Standard nutrition label with extra fields for misc. vitamins. Horizontal Layout</Label>
                 </Option>
             </FormType>
 
@@ -207,6 +191,134 @@ export default function LabelGenerator() {
                     </Detail>
                 </Row>
                 <Breakline />
+                <Row>
+                    <Detail>
+                        <Label for="vitaminDataFormat">Vitamin Data Format:</Label>
+                        <Select id="vitaminDataFormat" name="vitaminDataFormat">
+                            <Option value="percentage">Percentage</Option>
+                            <Option value="unitsofMeasure">Units of Measure</Option>
+                        </Select>
+                    </Detail>
+                    <Detail>
+                        <Label for="calcium">Calcium (%):</Label>
+                        <Input type="number" id="calcium" name="calcium"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="iron">Iron (%):</Label>
+                        <Input type="number" id="iron" name="iron"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="vitaminD">Vitamin D (%): </Label>
+                        <Input type="number" id="vitaminD" name="vitaminD"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="potassium">Potassium (%): </Label>
+                        <Input type="number" id="potassium" name="potassium"></Input>
+                    </Detail>
+                </Row>
+                <Breakline />
+                <Row>
+                    <Detail>
+                        <Label for="vitaminA">Vitamin A (%)</Label>
+                        <Input type="number" id="vitaminA" name="vitaminA"></Input>
+                    </Detail>
+                    <Detail>
+                        <Select id="vitaminAUnit" name="vitaminAData">
+                            <Option value="rentinol">As rentinol</Option>
+                            <Option value="betaCarotene">As beta-carotene</Option>
+                        </Select>
+                    </Detail>
+                    <Detail>
+                        <Label for="vitaminC">Vitamin C (%)</Label>
+                        <Input type="number" id="vitaminC" name="vitaminC"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="vitaminE">Vitamin E (%)</Label>
+                        <Input type="number" id="vitaminE" name="vitaminE"></Input>
+                    </Detail>
+                    <Detail>
+                        <Select id="vitaminEUnit" name="vitaminEData">
+                            <Option value="rentinol">From RRR-alpha-tocopherol</Option>
+                            <Option value="betaCarotene">From All-rac-alpha-tocopherol</Option>
+                        </Select>
+                    </Detail>
+                    <Detail>
+                        <Label for="vitaminK">Vitamin K (%)</Label>
+                        <Input type="number" id="vitaminK" name="vitaminK"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="thiamin">Thiamin (%):</Label>
+                        <Input type="number" id="thiamin" name="thiamin"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="riboflavin">Riboflavin (%):</Label>
+                        <Input type="number" id="riboflavin" name="riboflavin"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="niacin">Niacin (%):</Label>
+                        <Input type="number" id="niacin" name="niacin"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="folate">Folate (%):</Label>
+                        <Input type="number" id="folate" name="folate"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="folicAcid">Folic Acid (mcg): (%):</Label>
+                        <Input type="number" id="folicAcid" name="folicAcid"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="vitaminB12">Vitamin B12 (%):</Label>
+                        <Input type="number" id="vitaminB12" name="vitaminB12"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="biotin">Biotin (%):</Label>
+                        <Input type="number" id="biotin" name="biotin"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="pantothenicAcid">Pantothenic Acid (%):</Label>
+                        <Input type="number" id="pantothenicAcid" name="pantothenicAcid"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="phosphorus">Phosphorus (%):</Label>
+                        <Input type="number" id="phosphorus" name="phosphorus"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="iodine">Iodine (%):</Label>
+                        <Input type="number" id="iodine" name="iodine"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="magnesium">Magnesium (%):</Label>
+                        <Input type="number" id="magnesium" name="magnesium"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="zinc">Zinc (%):</Label>
+                        <Input type="number" id="zinc" name="zinc"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="selenium">Selenium (%):</Label>
+                        <Input type="number" id="selenium" name="selenium"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="copper">Copper (%):</Label>
+                        <Input type="number" id="copper" name="copper"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="manganese">Manganese (%):</Label>
+                        <Input type="number" id="manganese" name="manganese"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="chromium">Chromium (%):</Label>
+                        <Input type="number" id="chromium" name="chromium"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="molybdenum">Molybdenum (%):</Label>
+                        <Input type="number" id="molybdenum" name="molybdenum"></Input>
+                    </Detail>
+                    <Detail>
+                        <Label for="chloride">Chloride (%):</Label>
+                        <Input type="number" id="chloride" name="chloride"></Input>
+                    </Detail>
+                </Row>
             </Ingredients>
             <Center>
                 <ClearFormBtn type="reset" value="Clear Form" onClick={() => resetForm()}></ClearFormBtn>
